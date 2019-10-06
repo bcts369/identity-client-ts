@@ -1,0 +1,27 @@
+{
+  "name": "@lcnem/identity",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcnem/identity-client-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcnem/identity-client-ts/issues"
+  },
+  "homepage": "https://github.com/lcnem/identity-client-ts#readme",
+  "devDependencies": {
+    "@types/jasmine": "^3.4.2",
+    "karma": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-typescript-preprocessor": "^0.4.0",
+    "typescript": "^3.6.3"
+  }
+}
