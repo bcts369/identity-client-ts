@@ -8,7 +8,7 @@ $ npm i --save cosmos-client-ts
 
 ## Get
 
-`GET` `/identity/{address}`
+`GET` `/identity/accounts/{address}`
 
 ### Response
 
@@ -18,7 +18,17 @@ Goで言うところの`map[string]string`
 
 ## Set
 
-`PUT` `/identity/{address}`
+`PUT` `/identity/accounts/{address}`
+
+### Request
+
+```TypeScript
+interface SetReq{
+  base_req: BaseReq; // cosmos-client-ts
+  key: string;
+  value: string;
+}
+```
 
 ### Response
 
@@ -26,7 +36,16 @@ Goで言うところの`map[string]string`
 
 ## Import
 
-`POST` `/identity/import`
+`POST` `/identity/accounts/{address}/import`
+
+### Request
+
+```TypeScript
+interface ImportReq {
+  base_req: BaseReq; // cosmos-client-ts
+  from_address: string;
+}
+```
 
 ### Response
 
@@ -34,7 +53,15 @@ Goで言うところの`map[string]string`
 
 ## Delete
 
-`POST` `/identity/{address}/delete`
+`DELETE` `/identity/accounts/{address}`
+
+### Request
+
+```TypeScript
+interface DeleteReq {
+  base_req: BaseReq; // cosmos-client-ts
+}
+```
 
 ### Response
 

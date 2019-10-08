@@ -2,7 +2,11 @@
   "name": "@lcnem/identity",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "karma start"
   },
@@ -23,5 +27,8 @@
     "karma-jasmine": "^2.0.1",
     "karma-typescript-preprocessor": "^0.4.0",
     "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "cosmos-client-ts": "^0.1.4"
   }
 }
