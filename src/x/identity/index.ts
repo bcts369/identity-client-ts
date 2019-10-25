@@ -1,6 +1,8 @@
 import { CosmosSDK } from "cosmos-client-ts";
 import { StdTx } from "cosmos-client-ts/lib/x/auth/types/std-tx";
 import { SetReq } from "./types/set-req";
+import { ImportReq } from "./types/import-req";
+import { DeleteReq } from "./types/delete-req";
 
 // refer identity rest.go tx.go
 
