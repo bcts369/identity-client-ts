@@ -29,6 +29,6 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "cosmos-client-ts": "^0.1.4"
+    "cosmos-client-ts": "^0.1.6"
   }
 }
