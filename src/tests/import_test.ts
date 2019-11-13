@@ -6,11 +6,18 @@ import { DecCoin } from 'cosmos-client-ts/lib/types/cosmos-sdk/deccoin'
 import { Identity } from './../x/identity';
 import { ImportReq } from '../x/identity/types/import-req';
 
+/*
+bob's address
+cosmos15g0309kcs0nfed829cwyc07s6ydpaalel6676h
+
+alice's address
+cosmos16jzfjpqfnpvx6m25tjnujwngfy5qxhd56rgh3v
+*/
 
 const url: string = "http://133.130.77.80:1317";
 const chainId: string = "t";
 const sdk = new CosmosSDK(url, chainId);
-const address: string = "cosmos15g0309kcs0nfed829cwyc07s6ydpaalel6676h";
+const bob_address: string = "cosmos15g0309kcs0nfed829cwyc07s6ydpaalel6676h";
 
 class MyCoin implements Coin {
     denom = "stake";
@@ -23,7 +30,7 @@ class MyDecCoin implements DecCoin {
 }
 
 let defaultValues = (): BaseReq => ({
-    from: address,
+    from: bob_address,
     memo: "",
     chain_id: chainId,
     account_number: "0",
@@ -36,12 +43,13 @@ let defaultValues = (): BaseReq => ({
 });
 
 async function importIdentity() {
-    let params: ImportReq = {
-        from_address: address,
+    const alice_address = "cosmos16jzfjpqfnpvx6m25tjnujwngfy5qxhd56rgh3v"
+    const params: ImportReq = {
+        from_address: alice_address,
         base_req: defaultValues()
     }
     try {
-        let tx = await Identity.post(sdk, address, params)
+        const tx = await Identity.post(sdk, alice_address, params)
 
         console.log("結果:")
         console.log("fee", tx.fee);

@@ -22,8 +22,8 @@ getIdentity();
 
 // 次の記述でもOK（set、import、removeでも同様）
 
-Identity.get(sdk, address).then((item) => {
-    console.log("get結果", item);
+Identity.get(sdk, address).then((result) => {
+    console.log(result);
 }).catch((e) => {
     console.error("エラー内容:", e);
 });
