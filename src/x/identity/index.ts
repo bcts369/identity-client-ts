@@ -16,7 +16,7 @@ export module Identity {
     address: string,
     params: SetReq
   ) {
-    return sdk.put<StdTx>(`/identity/accounts/${address}`, params);
+    return sdk.put<StdTx>(`/identity/accounts/${address}`, JSON.stringify(params));
   }
 
   export function post(
@@ -24,7 +24,7 @@ export module Identity {
     address: string,
     params: ImportReq
   ) {
-    return sdk.post<StdTx>(`/identity/accounts/${address}/import`, params);
+    return sdk.post<StdTx>(`/identity/accounts/${address}/import`, JSON.stringify(params));
   }
 
   // delete演算子の `delete` とかぶってしまうので、関数名を `remove` に変更
@@ -33,6 +33,6 @@ export module Identity {
     address: string,
     params: DeleteReq
   ) {
-    return sdk.delete<StdTx>(`/identity/accounts/${address}`, params);
+    return sdk.delete<StdTx>(`/identity/accounts/${address}`, JSON.stringify(params));
   }
 }
